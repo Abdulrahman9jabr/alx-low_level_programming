@@ -1,41 +1,33 @@
+
 #include <stdio.h>
 
 /**
- * print_fib_x50 - prints the first 50 Fibonacci numbers,
- * starting with 1 and 2, followed by a new line.
- *
- * Return: void
+ * main - Prints the first 52 fibonacci numbers
+ * Return: Nothing!
  */
-void print_fib_x50(void)
-{
-	unsigned int target;
-	unsigned long int f, l, i, fib;
 
-	f = 1;
-	l = 2;
-	target = 50 - 2;
-	printf("1, 2, ");
-	for (i = 0 ; i < target ; i++)
-	{
-		fib = f + l;
-		printf("%lu", fib);
-		f = l;
-		l = fib;
-		if (i < target - 1)
-			printf(", ");
-	}
-	putchar('\n');
-}
-
-
-/**
- * main - Entry point,
- *
- *
- * Return: Always 0 (sucess)
- */
 int main(void)
+
 {
-	print_fib_x50();
+
+	int i = 0;
+	long j = 1, k = 2;
+
+	while (i < 50)
+	{
+	if (i == 0)
+	printf("%ld", j);
+	else if (i == 1)
+	printf(", %ld", k);
+	else
+	{
+	k += j;
+	j = k - j;
+	printf(", %ld", k);
+	}
+	++i;
+	}
+	printf("\n");
 	return (0);
+
 }
